@@ -140,6 +140,49 @@
 
         </div>
 
+        <div class="post-box comentarios">
+            <title>Formulario con Validación</title>
+            <h2 class="category">comentarios</h2>
+            <a href="post-pageComentarios.html" class="post-title"></a>
+            <style>
+                .error {
+                    color: red;
+                }
+            </style>
+        </head>
+        <body>
+
+            <h1>Deja tu comentario</h1>
+        
+            <form id="commentForm" onsubmit="return validarFormulario()">
+                <label for="comentario"></label>
+                <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
+                <span id="comentarioError" class="error"></span>
+        
+                <br>
+        
+                <input type="submit" value="Enviar comentario">
+            </form>
+        
+            <script>
+                function validarFormulario() {
+                    var comentario = document.getElementById("comentario").value;
+                    var comentarioError = document.getElementById("comentarioError");
+        
+                    // Validación del comentario
+                    if (comentario.trim() === "") {
+                        comentarioError.innerHTML = "Por favor, ingresa un comentario.";
+                        return false; // Evita que el formulario se envíe si hay errores.
+                    } else {
+                        comentarioError.innerHTML = "";
+                        return true; // Permite que el formulario se envíe si no hay errores.
+                    }
+                }
+            </script>
+        </div>
+
+
+
     </section>
 
 
